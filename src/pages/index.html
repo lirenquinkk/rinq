@@ -1,0 +1,101 @@
+<section class="hero">
+  <h1>{{ homeHeading }}</h1>
+  <p class="lead">{{ homeLead }}</p>
+  <p class="cta">
+    <a class="button primary" href="#download">{{ homeGet }}</a>
+    <a class="button" href="https://t.me/lirencalendarbot" rel="noopener">{{ homeBot }}</a>
+  </p>
+</section>
+
+<section class="shots" aria-label="{{ shotsLabel }}">
+  <figure class="shot-pc"><img src="{{ root }}shot-pc-{{ lang }}.png" alt="{{ shotPcAlt }}" width="1200" height="760" loading="lazy"></figure>
+  <figure class="shot-phone"><img src="{{ root }}shot-phone-{{ lang }}.png" alt="{{ shotPhoneAlt }}" width="390" height="844" loading="lazy"></figure>
+</section>
+
+<section class="features" aria-labelledby="features-title">
+  <h2 id="features-title" class="visually-hidden">{{ featuresTitle }}</h2>
+  <article><h3>{{ f1Title }}</h3><p>{{ f1Text }}</p></article>
+  <article><h3>{{ f2Title }}</h3><p>{{ f2Text }}</p></article>
+  <article><h3>{{ f3Title }}</h3><p>{{ f3Text }}</p></article>
+  <article><h3>{{ f4Title }}</h3><p>{{ f4Text }}</p></article>
+  <article><h3>{{ f5Title }}</h3><p>{{ f5Text }}</p></article>
+  <article><h3>{{ f6Title }}</h3><p>{{ f6Text }}</p></article>
+</section>
+
+<section id="pro" class="pro" aria-labelledby="pro-title">
+  <h2 id="pro-title">{{ proTitle }}</h2>
+  <p>{{ proLead }}</p>
+  <div class="plans">
+    <article class="plan">
+      <h3>{{ planFreeTitle }}</h3>
+      <p class="price">{{ planFreePrice }}</p>
+      <ul>
+        <li>{{ planFree1 }}</li>
+        <li>{{ planFree2 }}</li>
+        <li>{{ planFree3 }}</li>
+      </ul>
+    </article>
+    <article class="plan is-pro">
+      <h3>{{ planProTitle }}</h3>
+      <p class="price">{{ planProPrice }}</p>
+      <ul>
+        <li>{{ planPro1 }}</li>
+        <li>{{ planPro2 }}</li>
+        <li>{{ planPro3 }}</li>
+      </ul>
+      <p><a class="button primary" href="https://t.me/lirencalendarbot?start=pro" rel="noopener">{{ planProGet }}</a></p>
+    </article>
+  </div>
+  <p class="note">{{ proNote }} <a href="refunds.html">{{ proRefunds }}</a></p>
+</section>
+
+<section id="download" class="download" aria-labelledby="download-title">
+  <h2 id="download-title">{{ downloadTitle }}</h2>
+  <p>{{ downloadLead }}</p>
+  <p class="buttons">
+    <a class="button primary" href="{{ downloadWindowsHref }}">{{ downloadWindows }}</a>
+    <a class="button primary" href="{{ downloadAndroidHref }}">{{ downloadAndroid }}</a>
+  </p>
+  <details><summary>{{ warnWindowsTitle }}</summary><p>{{ warnWindowsText }}</p></details>
+  <details><summary>{{ warnAndroidTitle }}</summary><p>{{ warnAndroidText }}</p></details>
+  <p class="note">{{ noIphone }}</p>
+</section>
+
+<section id="reviews" class="reviews" aria-labelledby="reviews-title">
+  <h2 id="reviews-title">{{ reviewsTitle }}</h2>
+  <div class="review-list" data-empty="{{ reviewsEmpty }}" data-failed="{{ reviewsFailed }}" data-stars="{{ reviewStars }}" data-anonymous="{{ reviewAnonymous }}" aria-live="polite">
+    <p class="muted">{{ reviewsLoading }}</p>
+  </div>
+
+  <form class="feedback" data-kind="review" data-lang="{{ lang }}" data-sent="{{ reviewSent }}" data-failed="{{ sendFailed }}" data-short="{{ tooShort }}" novalidate>
+    <h3>{{ reviewWrite }}</h3>
+    <fieldset class="stars">
+      <legend>{{ reviewRating }}</legend>
+      <label><input type="radio" name="rating" value="5" checked> 5 ★★★★★</label>
+      <label><input type="radio" name="rating" value="4"> 4 ★★★★</label>
+      <label><input type="radio" name="rating" value="3"> 3 ★★★</label>
+      <label><input type="radio" name="rating" value="2"> 2 ★★</label>
+      <label><input type="radio" name="rating" value="1"> 1 ★</label>
+    </fieldset>
+    <label for="review-name">{{ reviewName }}</label>
+    <input id="review-name" name="name" type="text" maxlength="40" autocomplete="nickname">
+    <label for="review-message">{{ reviewMessage }}</label>
+    <textarea id="review-message" name="message" rows="4" maxlength="2000" required></textarea>
+    <p class="muted small">{{ reviewShownNote }}</p>
+    <button class="button primary" type="submit">{{ reviewSend }}</button>
+    <p class="status" role="status"></p>
+  </form>
+
+  <form id="complain" class="feedback" data-kind="complaint" data-lang="{{ lang }}" data-sent="{{ complaintSent }}" data-failed="{{ sendFailed }}" data-short="{{ tooShort }}" data-bad-email="{{ badEmail }}" novalidate>
+    <h3>{{ complaintTitle }}</h3>
+    <p class="muted">{{ complaintLead }}</p>
+    <label for="complaint-message">{{ complaintMessage }}</label>
+    <textarea id="complaint-message" name="message" rows="4" maxlength="2000" required></textarea>
+    <label for="complaint-email">{{ complaintEmail }}</label>
+    <input id="complaint-email" name="email" type="email" maxlength="320" autocomplete="email">
+    <button class="button" type="submit">{{ complaintSend }}</button>
+    <p class="status" role="status"></p>
+  </form>
+</section>
+
+<script src="{{ root }}feedback.js" defer></script>

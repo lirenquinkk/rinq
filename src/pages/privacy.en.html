@@ -1,0 +1,74 @@
+<!-- title: Privacy policy -->
+<h1>Privacy policy</h1>
+<p class="updated">Last updated: {{ updatedHtml }}</p>
+
+<p>rinq is a calendar for Windows, Android and Telegram. This policy says what rinq keeps about you, why, where,
+who else sees it, for how long, and how to get it removed. rinq is run by {{ operatorHtml }},
+{{ countryHtml }} ("we"). Write to {{ emailHtml }} about anything here.</p>
+
+<h2>What we keep and why</h2>
+<table>
+<tr><th>What</th><th>Why</th></tr>
+<tr><td>Your email address and password. The password is stored only as a hash; we can't read it.</td><td>To sign you in on your devices.</td></tr>
+<tr><td>Your calendar: each plan's title, notes, date and time, repeats, reminders and colour.</td><td>To keep your calendar the same on your PC, phone and Telegram, and to send your reminders.</td></tr>
+<tr><td>Your settings: language, date and time format, first day of the week, theme, time zone, region, and which features you turned on.</td><td>So rinq works the way you set it on every device, and reminders arrive at your local time.</td></tr>
+<tr><td>Energy check-ins you answer with /energy (a level and a time).</td><td>To suggest times when you usually have the energy for something.</td></tr>
+<tr><td>If you link Telegram: your Telegram chat number and your name as Telegram shows it.</td><td>To send reminders to the right chat and to show "linked to …" in the apps.</td></tr>
+<tr><td>How many voice notes and photos you had read this month: the time, the kind (voice or photo), and whether it worked. Not the content.</td><td>To count your monthly allowance and to stop abuse.</td></tr>
+<tr><td>If you buy Pro: your plan, until when it's paid, your Telegram account number, and Telegram's payment reference.</td><td>To give you Pro, to renew or cancel it, and to refund it.</td></tr>
+<tr><td>If you write a review on the website: your rating, your words, and the name you choose to give, if any.</td><td>Reviews of 4 or 5 stars are shown on the website with that name. Lower ones are read only by us, to make rinq better.</td></tr>
+<tr><td>If you send a complaint on the website: your words, and your email if you want an answer.</td><td>To fix what went wrong and to answer you. Only we see it.</td></tr>
+</table>
+
+<p><strong>Voice notes and photos are not kept.</strong> When you send one, rinq passes it to the services below to
+turn it into plans, then drops it. Only the resulting plans are saved, and only if you keep them.</p>
+
+<p>rinq has no advertising, no analytics and no tracking, and we don't sell or share your data for marketing.</p>
+
+<h2>Who else handles it</h2>
+<table>
+<tr><th>Service</th><th>What it does for rinq</th><th>What it sees</th></tr>
+<tr><td>Supabase (database and sign-in)</td><td>Stores your account and calendar in its Frankfurt, Germany (EU) data centre.</td><td>Everything in the table above.</td></tr>
+<tr><td>Railway (server)</td><td>Runs the Telegram bot and sends reminders.</td><td>Your calendar and settings while it works on them. It keeps only its own place in the message queue.</td></tr>
+<tr><td>Telegram</td><td>Carries your messages to and from the bot, and takes Pro payments in Telegram Stars.</td><td>What you send the bot and what it sends you. We never see your card or bank details.</td></tr>
+<tr><td>Groq</td><td>Turns voice notes into text.</td><td>The recording of each voice note.</td></tr>
+<tr><td>Anthropic (Claude)</td><td>Reads the text of voice notes and photos into plans.</td><td>The text of each voice note, each photo, and today's date.</td></tr>
+</table>
+<p>Each of these companies handles the data under its own terms, and some of them process it outside the EU,
+including in the United States. We use them only to run rinq.</p>
+
+<h2>How long we keep it</h2>
+<ul>
+<li>Your account, calendar and settings: until you delete your account.</li>
+<li>A plan you delete: removed for good 60 days later, so your other devices have time to catch up.</li>
+<li>The monthly count of voice notes and photos: 13 months.</li>
+<li>The voice-note length log: 30 days.</li>
+<li>Reviews and complaints from the website: until you ask us to remove them. We can take a review off the page at any time.</li>
+<li>Your Pro plan and its payment reference: until you delete your account. Telegram keeps its own record of every payment.</li>
+</ul>
+
+<h2>Deleting your account</h2>
+<p>In the PC or phone app, open Settings and choose <strong>Delete my account</strong> (on the PC it is on the Account tab). This removes your account,
+calendar, settings, Telegram link and usage counts at once, and stops a Pro subscription from renewing. The copy of the
+calendar on the device you used stays there until you remove the app. If you can't sign in any more, send
+<code>/paysupport delete my account</code> to the bot, or write to {{ emailHtml }} from the email you signed up with.</p>
+
+<h2>Your rights</h2>
+<p>You can ask for a copy of your data, ask us to correct it or delete it, object to how we use it, or ask us to
+stop using it. Write to {{ emailHtml }}. We'll answer within 30 days. If you're in the EU or UK, you can
+also complain to your data protection authority.</p>
+
+<h2>Children</h2>
+<p>rinq is for people aged 16 and older. We don't knowingly keep data about anyone younger. If you think a child has
+an account, write to us and we'll delete it.</p>
+
+<h2>Cookies</h2>
+<p>This website sets no cookies, keeps nothing in your browser and loads nothing from other sites. When you send a review or a complaint, or open the reviews, the page talks to our database (Supabase) and nothing else. The apps don't use cookies either.</p>
+
+<h2>Security</h2>
+<p>Data travels over encrypted connections (HTTPS). Each account can reach only its own data, and the database
+enforces this for every request. No system is perfectly safe; if something goes wrong that puts your data at risk,
+we'll tell you.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes in a way that matters, the apps and the bot will say so before the change applies.</p>
