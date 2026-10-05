@@ -17,7 +17,10 @@ function el(tag, className, text) {
 async function showReviews(list) {
   const lang = document.documentElement.lang;
   try {
-    const response = await fetch(`${API}?select=name,rating,message,at&order=at.desc&limit=30`, { headers: HEADERS });
+    const query = (columns) => fetch(`${API}?select=${columns}&order=at.desc&limit=30`, { headers: HEADERS });
+    // The badge column is newer than the page may be; without it, reviews still load.
+    let response = await query('name,rating,message,at,badge');
+    if (response.status === 400) response = await query('name,rating,message,at');
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const rows = await response.json();
     list.replaceChildren();
@@ -26,12 +29,14 @@ async function showReviews(list) {
       return;
     }
     for (const row of rows) {
-      const card = el('article', 'review');
+      const card = el('article', row.badge === 'founder' ? 'review is-founder' : 'review');
       const stars = el('p', 'review-stars', '★'.repeat(row.rating));
       stars.setAttribute('aria-label', list.dataset.stars.replace('{n}', row.rating));
       stars.setAttribute('role', 'img');
       const who = el('p', 'review-who');
       who.append(el('strong', '', row.name || list.dataset.anonymous));
+      // Only the owner can set a badge in the database; a name a visitor types never earns one.
+      if (row.badge === 'founder') who.append(' ', el('span', 'badge', `✓ ${list.dataset.founder}`));
       const when = new Date(row.at);
       if (!Number.isNaN(when.getTime())) {
         who.append(' · ', el('time', '', when.toLocaleDateString(lang, { day: 'numeric', month: 'long', year: 'numeric' })));

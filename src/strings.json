@@ -111,7 +111,8 @@
     "tgTime": "🕐 Time",
     "tgReminder": "In 1 hour: Dentist, 15:00",
     "downloadWindowsNote": "Windows 10 and 11 · installer",
-    "downloadAndroidNote": "Android phones · APK file"
+    "downloadAndroidNote": "Android phones · APK file",
+    "reviewFounder": "Founder of rinq"
   },
   "ru": {
     "langName": "Русский",
@@ -225,6 +226,7 @@
     "tgTime": "🕐 Время",
     "tgReminder": "Через 1 час: Стоматолог, 15:00",
     "downloadWindowsNote": "Windows 10 и 11 · установщик",
-    "downloadAndroidNote": "Телефоны Android · файл APK"
+    "downloadAndroidNote": "Телефоны Android · файл APK",
+    "reviewFounder": "Основатель rinq"
   }
 }
