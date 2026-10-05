@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://psesapmlbjukmdnxkcrv.supabase.co; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<link rel="alternate" hreflang="{{ otherCode }}" href="{{ otherHref }}">
+<link rel="icon" href="{{ root }}icon.png">
+<link rel="stylesheet" href="{{ root }}style.css">
+</head>
+<body data-page="{{ page }}">
+<a class="skip" href="#main">{{ skipToContent }}</a>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="index.html"><img src="{{ root }}icon.png" alt="" width="28" height="28"> rinq</a>
+    <nav aria-label="{{ navLabel }}">
+      <a href="index.html#download">{{ navDownload }}</a>
+      <a href="index.html#pro">{{ navPro }}</a>
+      <a href="index.html#reviews">{{ navReviews }}</a>
+      <a href="{{ otherHref }}" lang="{{ otherCode }}" hreflang="{{ otherCode }}">{{ otherLang }}</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+{{ contentHtml }}
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <nav aria-label="{{ footLabel }}">
+      <a href="terms.html">{{ footTerms }}</a>
+      <a href="privacy.html">{{ footPrivacy }}</a>
+      <a href="refunds.html">{{ footRefunds }}</a>
+      <a href="index.html#complain">{{ footComplain }}</a>
+    </nav>
+    <p>rinq · {{ operatorHtml }}, {{ countryHtml }} · {{ emailHtml }}</p>
+    <p>{{ footNoCookies }}</p>
+  </div>
+</footer>
+</body>
+</html>
