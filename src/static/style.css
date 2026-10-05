@@ -237,6 +237,8 @@ details p { margin: 10px 0 0; color: var(--muted); }
 .review-stars { color: var(--accent-text); letter-spacing: 2px; }
 .review-text { white-space: pre-line; overflow-wrap: anywhere; }
 .review-who { color: var(--muted); font-size: 0.9rem; }
+.badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 9px; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.01em; vertical-align: 1px; }
+.review.is-founder { border: 2px solid transparent; background: linear-gradient(var(--surface), var(--surface)) padding-box, linear-gradient(135deg, var(--accent), var(--accent-2)) border-box; }
 .forms { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; align-items: start; padding-bottom: 72px; }
 .feedback { display: grid; gap: 8px; }
 .feedback h3 { margin: 0 0 4px; }
