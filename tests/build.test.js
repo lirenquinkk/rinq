@@ -59,3 +59,11 @@ test('the site keeps no secret: only the publishable key', () => {
   assert.match(script, /sb_publishable_/);
   assert.doesNotMatch(script, /sb_secret_|service_role/);
 });
+
+test('the page scripts can share one page: no top-level name is declared twice', async () => {
+  // Classic scripts share one global scope; a second top-level `const KEY` stops that whole script.
+  const { Script } = await import('node:vm');
+  const dir = path.join(out);
+  const scripts = fs.readdirSync(dir).filter((file) => file.endsWith('.js')).map((file) => fs.readFileSync(path.join(dir, file), 'utf8'));
+  assert.doesNotThrow(() => new Script(scripts.join('\n;\n')), 'two scripts declare the same top-level name');
+});
