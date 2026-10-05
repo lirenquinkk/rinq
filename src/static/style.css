@@ -24,8 +24,10 @@
   --tg-me: #dcf8c6;
   --radius: 18px;
 }
+/* Dark: the visitor's system choice, unless they picked a theme with the switch in the header. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
     --bg: #121316;
     --surface: #1c1d22;
     --surface-2: #22232a;
@@ -49,8 +51,33 @@
     --tg-me: #2b3d2a;
   }
 }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #121316;
+  --surface: #1c1d22;
+  --surface-2: #22232a;
+  --text: #f1f1f3;
+  --muted: #b9bdc5;
+  --line: #2f3038;
+  --accent: #ff7a61;
+  --accent-2: #ffa25c;
+  --accent-text: #ff8d77;
+  --on-accent: #1d0f0b;
+  --accent-soft: #3a2621;
+  --danger: #ff99a4;
+  --success: #6fd49a;
+  --fill: #4a3f1c;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px rgb(0 0 0 / 0.35);
+  --shadow-big: 0 30px 80px rgb(0 0 0 / 0.55);
+  --glow-1: rgb(255 122 97 / 0.22);
+  --glow-2: rgb(255 162 92 / 0.14);
+  --glow-3: rgb(114 163 255 / 0.16);
+  --tg: #1f2c3b;
+  --tg-me: #2b3d2a;
+}
 
 * { box-sizing: border-box; }
+:root { color-scheme: light; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
@@ -85,6 +112,16 @@ a { color: var(--accent-text); }
 .top nav { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; }
 .top nav a { color: var(--muted); text-decoration: none; padding: 6px 10px; border-radius: 999px; font-size: 0.95rem; transition: background-color .2s, color .2s; }
 .top nav a:hover { color: var(--text); background: var(--surface); }
+.theme-switch { display: inline-grid; place-items: center; width: 38px; height: 38px; margin-left: 4px; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--text); cursor: pointer; transition: transform .2s, background-color .2s; }
+.theme-switch:hover { transform: rotate(-15deg); }
+.theme-switch svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.theme-switch .moon { display: none; }
+:root[data-theme="dark"] .theme-switch .sun { display: none; }
+:root[data-theme="dark"] .theme-switch .moon { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-switch .sun { display: none; }
+  :root:not([data-theme="light"]) .theme-switch .moon { display: block; }
+}
 
 /* Buttons */
 .button {

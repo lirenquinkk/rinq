@@ -15,7 +15,7 @@
     "footPrivacy": "Privacy policy",
     "footRefunds": "Refunds",
     "footComplain": "Complain",
-    "footNoCookies": "This website sets no cookies and doesn't track you.",
+    "footNoCookies": "This website sets no cookies and doesn't track you. It remembers only your light or dark choice, in your own browser.",
     "title_index": "rinq: one calendar on your PC, phone and in Telegram",
     "desc_index": "A calendar on your PC, your phone and in Telegram at once. Write a plan in plain words, or send a voice note or a photo, and get reminded wherever you are. Free.",
     "homeLead": "Write “Dentist tomorrow 15:00, remind 1 hour before” and it's in your calendar, showing the same on your computer, your phone and in Telegram. Reminders come wherever you are.",
@@ -112,7 +112,8 @@
     "tgReminder": "In 1 hour: Dentist, 15:00",
     "downloadWindowsNote": "Windows 10 and 11 · installer",
     "downloadAndroidNote": "Android phones · APK file",
-    "reviewFounder": "Founder of rinq"
+    "reviewFounder": "Founder of rinq",
+    "themeSwitch": "Switch between light and dark"
   },
   "ru": {
     "langName": "Русский",
@@ -130,7 +131,7 @@
     "footPrivacy": "Конфиденциальность",
     "footRefunds": "Возвраты",
     "footComplain": "Пожаловаться",
-    "footNoCookies": "Этот сайт не ставит cookie и не следит за вами.",
+    "footNoCookies": "Этот сайт не ставит cookie и не следит за вами. Он запоминает только выбранную тему, в вашем же браузере.",
     "title_index": "rinq: один календарь на компьютере, телефоне и в Telegram",
     "desc_index": "Календарь сразу на компьютере, телефоне и в Telegram. Напишите план обычными словами или отправьте голосовое или фото и получайте напоминания там, где вы есть. Бесплатно.",
     "homeLead": "Напишите «Стоматолог завтра в 15:00, напомни за час», и запись появится в календаре, одинаково на компьютере, телефоне и в Telegram. Напоминания приходят туда, где вы есть.",
@@ -227,6 +228,7 @@
     "tgReminder": "Через 1 час: Стоматолог, 15:00",
     "downloadWindowsNote": "Windows 10 и 11 · установщик",
     "downloadAndroidNote": "Телефоны Android · файл APK",
-    "reviewFounder": "Основатель rinq"
+    "reviewFounder": "Основатель rinq",
+    "themeSwitch": "Переключить светлую и тёмную тему"
   }
 }
