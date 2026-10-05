@@ -67,3 +67,10 @@ test('the page scripts can share one page: no top-level name is declared twice',
   const scripts = fs.readdirSync(dir).filter((file) => file.endsWith('.js')).map((file) => fs.readFileSync(path.join(dir, file), 'utf8'));
   assert.doesNotThrow(() => new Script(scripts.join('\n;\n')), 'two scripts declare the same top-level name');
 });
+
+test('no page goes live with a blank left to fill', () => {
+  for (const file of written) {
+    const html = fs.readFileSync(path.join(out, file), 'utf8');
+    assert.doesNotMatch(html, /class="fill"|\[(?:OPERATOR NAME|COUNTRY|EMAIL|DATE|ИМЯ ОПЕРАТОРА|СТРАНА|ДАТА)\]/, file);
+  }
+});
