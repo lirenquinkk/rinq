@@ -10,6 +10,7 @@
 <link rel="alternate" hreflang="{{ otherCode }}" href="{{ otherHref }}">
 <link rel="icon" href="{{ root }}icon.png">
 <link rel="stylesheet" href="{{ root }}style.css">
+<script src="{{ root }}motion.js"></script>
 </head>
 <body data-page="{{ page }}">
 <a class="skip" href="#main">{{ skipToContent }}</a>
@@ -24,7 +25,7 @@
     </nav>
   </div>
 </header>
-<main id="main" class="wrap">
+<main id="main" class="page-{{ page }}">
 {{ contentHtml }}
 </main>
 <footer class="foot">

@@ -1,32 +1,83 @@
 <section class="hero">
-  <h1>{{ homeHeading }}</h1>
-  <p class="lead">{{ homeLead }}</p>
-  <p class="cta">
-    <a class="button primary" href="#download">{{ homeGet }}</a>
-    <a class="button" href="https://t.me/lirencalendarbot" rel="noopener">{{ homeBot }}</a>
-  </p>
+  <div class="glow" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow reveal">{{ eyebrow }}</p>
+      <h1 class="reveal">{{ homeHeadingStart }}<span class="accent">{{ homeHeadingAccent }}</span></h1>
+      <p class="lead reveal">{{ homeLead }}</p>
+      <p class="cta reveal">
+        <a class="button primary big" href="#download">{{ homeGet }}</a>
+        <a class="button big" href="https://t.me/lirencalendarbot" rel="noopener">{{ homeBot }}</a>
+      </p>
+      <p class="trust reveal">{{ trustLine }}</p>
+    </div>
+
+    <div class="demo reveal" aria-hidden="true"
+         data-examples='[["{{ demo1Input }}","{{ demo1Title }}","{{ demo1When }}","{{ demo1Remind }}"],["{{ demo2Input }}","{{ demo2Title }}","{{ demo2When }}","{{ demo2Remind }}"],["{{ demo3Input }}","{{ demo3Title }}","{{ demo3When }}","{{ demo3Remind }}"]]'>
+      <div class="demo-input"><span class="demo-plus">+</span><span class="demo-typed">{{ demo1Input }}</span><span class="caret"></span></div>
+      <div class="demo-card is-shown">
+        <span class="demo-bar"></span>
+        <div>
+          <p class="demo-title">{{ demo1Title }}</p>
+          <p class="demo-when">{{ demo1When }}</p>
+          <p class="demo-remind">🔔 <span>{{ demo1Remind }}</span></p>
+        </div>
+      </div>
+      <div class="demo-devices">
+        <span class="device is-on"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>{{ demoPc }}</span>
+        <span class="device is-on"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>{{ demoPhone }}</span>
+        <span class="device is-on"><svg viewBox="0 0 24 24"><path d="M21 4 3 11l6 2 2 6 3-4 5 4z"/><path d="m9 13 8-6"/></svg>Telegram</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="shots" aria-label="{{ shotsLabel }}">
-  <figure class="shot-pc"><img src="{{ root }}shot-pc-{{ lang }}.png" alt="{{ shotPcAlt }}" width="1200" height="760" loading="lazy"></figure>
-  <figure class="shot-phone"><img src="{{ root }}shot-phone-{{ lang }}.png" alt="{{ shotPhoneAlt }}" width="390" height="844" loading="lazy"></figure>
+<section class="shots wrap" aria-label="{{ shotsLabel }}">
+  <figure class="window reveal">
+    <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>rinq</span></div>
+    <img src="{{ root }}shot-pc-{{ lang }}.png" alt="{{ shotPcAlt }}" width="1200" height="760" loading="lazy">
+  </figure>
+  <figure class="phone reveal">
+    <img src="{{ root }}shot-phone-{{ lang }}.png" alt="{{ shotPhoneAlt }}" width="390" height="844" loading="lazy">
+  </figure>
 </section>
 
-<section class="features" aria-labelledby="features-title">
-  <h2 id="features-title" class="visually-hidden">{{ featuresTitle }}</h2>
-  <article><h3>{{ f1Title }}</h3><p>{{ f1Text }}</p></article>
-  <article><h3>{{ f2Title }}</h3><p>{{ f2Text }}</p></article>
-  <article><h3>{{ f3Title }}</h3><p>{{ f3Text }}</p></article>
-  <article><h3>{{ f4Title }}</h3><p>{{ f4Text }}</p></article>
-  <article><h3>{{ f5Title }}</h3><p>{{ f5Text }}</p></article>
-  <article><h3>{{ f6Title }}</h3><p>{{ f6Text }}</p></article>
+<section class="features wrap" aria-labelledby="features-title">
+  <h2 id="features-title" class="section-title reveal">{{ featuresTitle }}</h2>
+  <div class="feature-grid">
+    <article class="reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13 7 4 4"/></svg></span><h3>{{ f1Title }}</h3><p>{{ f1Text }}</p></article>
+    <article class="reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></span><h3>{{ f2Title }}</h3><p>{{ f2Text }}</p></article>
+    <article class="reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></svg></span><h3>{{ f3Title }}</h3><p>{{ f3Text }}</p></article>
+    <article class="reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span><h3>{{ f4Title }}</h3><p>{{ f4Text }}</p></article>
+    <article class="reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/></svg></span><h3>{{ f5Title }}</h3><p>{{ f5Text }}</p></article>
+    <article class="reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><h3>{{ f6Title }}</h3><p>{{ f6Text }}</p></article>
+  </div>
 </section>
 
-<section id="pro" class="pro" aria-labelledby="pro-title">
-  <h2 id="pro-title">{{ proTitle }}</h2>
-  <p>{{ proLead }}</p>
+<section class="telegram">
+  <div class="wrap tg-grid">
+    <div class="reveal">
+      <h2 class="section-title">{{ tgTitle }}</h2>
+      <p class="lead">{{ tgText }}</p>
+      <p><a class="button primary big" href="https://t.me/lirencalendarbot" rel="noopener">{{ homeBot }}</a></p>
+    </div>
+    <div class="chat reveal" aria-hidden="true">
+      <div class="bubble me voice"><span class="play">▶</span><span class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="len">0:04</span></div>
+      <div class="bubble bot">
+        <p><strong>{{ tgAdded }}</strong></p>
+        <p>{{ demo1Title }}<br>{{ demo1When }}<br>🔔 {{ demo1Remind }}</p>
+        <div class="keys"><span>{{ tgUndo }}</span><span>{{ tgDate }}</span><span>{{ tgTime }}</span></div>
+      </div>
+      <div class="bubble bot remind"><p>⏰ {{ tgReminder }}</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pro" class="pro wrap" aria-labelledby="pro-title">
+  <h2 id="pro-title" class="section-title reveal">{{ proTitle }}</h2>
+  <p class="lead reveal">{{ proLead }}</p>
   <div class="plans">
-    <article class="plan">
+    <article class="plan reveal">
       <h3>{{ planFreeTitle }}</h3>
       <p class="price">{{ planFreePrice }}</p>
       <ul>
@@ -34,8 +85,9 @@
         <li>{{ planFree2 }}</li>
         <li>{{ planFree3 }}</li>
       </ul>
+      <p><a class="button big" href="#download">{{ homeGet }}</a></p>
     </article>
-    <article class="plan is-pro">
+    <article class="plan is-pro reveal">
       <h3>{{ planProTitle }}</h3>
       <p class="price">{{ planProPrice }}</p>
       <ul>
@@ -43,59 +95,70 @@
         <li>{{ planPro2 }}</li>
         <li>{{ planPro3 }}</li>
       </ul>
-      <p><a class="button primary" href="https://t.me/lirencalendarbot?start=pro" rel="noopener">{{ planProGet }}</a></p>
+      <p><a class="button primary big" href="https://t.me/lirencalendarbot?start=pro" rel="noopener">{{ planProGet }}</a></p>
     </article>
   </div>
-  <p class="note">{{ proNote }} <a href="refunds.html">{{ proRefunds }}</a></p>
+  <p class="note reveal">{{ proNote }} <a href="refunds.html">{{ proRefunds }}</a></p>
 </section>
 
 <section id="download" class="download" aria-labelledby="download-title">
-  <h2 id="download-title">{{ downloadTitle }}</h2>
-  <p>{{ downloadLead }}</p>
-  <p class="buttons">
-    <a class="button primary" href="{{ downloadWindowsHref }}">{{ downloadWindows }}</a>
-    <a class="button primary" href="{{ downloadAndroidHref }}">{{ downloadAndroid }}</a>
-  </p>
-  <details><summary>{{ warnWindowsTitle }}</summary><p>{{ warnWindowsText }}</p></details>
-  <details><summary>{{ warnAndroidTitle }}</summary><p>{{ warnAndroidText }}</p></details>
-  <p class="note">{{ noIphone }}</p>
+  <div class="wrap">
+    <h2 id="download-title" class="section-title reveal">{{ downloadTitle }}</h2>
+    <p class="lead reveal">{{ downloadLead }}</p>
+    <div class="get">
+      <a class="get-card reveal" href="{{ downloadWindowsHref }}">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10 4.5v7H3zM11 4.3 21 3v8.5H11zM3 12.5h7v7l-7-1zM11 12.5h10V21l-10-1.4z"/></svg>
+        <span><strong>{{ downloadWindows }}</strong><small>{{ downloadWindowsNote }}</small></span>
+      </a>
+      <a class="get-card reveal" href="{{ downloadAndroidHref }}">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10h14v8a1 1 0 0 1-1 1h-1v3h-2v-3H9v3H7v-3H6a1 1 0 0 1-1-1zM6 9a6 6 0 0 1 12 0zM7.5 3.5 9 6M16.5 3.5 15 6"/></svg>
+        <span><strong>{{ downloadAndroid }}</strong><small>{{ downloadAndroidNote }}</small></span>
+      </a>
+    </div>
+    <details class="reveal"><summary>{{ warnWindowsTitle }}</summary><p>{{ warnWindowsText }}</p></details>
+    <details class="reveal"><summary>{{ warnAndroidTitle }}</summary><p>{{ warnAndroidText }}</p></details>
+    <p class="note">{{ noIphone }}</p>
+  </div>
 </section>
 
-<section id="reviews" class="reviews" aria-labelledby="reviews-title">
-  <h2 id="reviews-title">{{ reviewsTitle }}</h2>
+<section id="reviews" class="reviews wrap" aria-labelledby="reviews-title">
+  <h2 id="reviews-title" class="section-title reveal">{{ reviewsTitle }}</h2>
   <div class="review-list" data-empty="{{ reviewsEmpty }}" data-failed="{{ reviewsFailed }}" data-stars="{{ reviewStars }}" data-anonymous="{{ reviewAnonymous }}" aria-live="polite">
     <p class="muted">{{ reviewsLoading }}</p>
   </div>
 
-  <form class="feedback" data-kind="review" data-lang="{{ lang }}" data-sent="{{ reviewSent }}" data-failed="{{ sendFailed }}" data-short="{{ tooShort }}" novalidate>
-    <h3>{{ reviewWrite }}</h3>
-    <fieldset class="stars">
-      <legend>{{ reviewRating }}</legend>
-      <label><input type="radio" name="rating" value="5" checked> 5 ★★★★★</label>
-      <label><input type="radio" name="rating" value="4"> 4 ★★★★</label>
-      <label><input type="radio" name="rating" value="3"> 3 ★★★</label>
-      <label><input type="radio" name="rating" value="2"> 2 ★★</label>
-      <label><input type="radio" name="rating" value="1"> 1 ★</label>
-    </fieldset>
-    <label for="review-name">{{ reviewName }}</label>
-    <input id="review-name" name="name" type="text" maxlength="40" autocomplete="nickname">
-    <label for="review-message">{{ reviewMessage }}</label>
-    <textarea id="review-message" name="message" rows="4" maxlength="2000" required></textarea>
-    <p class="muted small">{{ reviewShownNote }}</p>
-    <button class="button primary" type="submit">{{ reviewSend }}</button>
-    <p class="status" role="status"></p>
-  </form>
+  <div class="forms">
+    <form class="feedback reveal" data-kind="review" data-lang="{{ lang }}" data-sent="{{ reviewSent }}" data-failed="{{ sendFailed }}" data-short="{{ tooShort }}" novalidate>
+      <h3>{{ reviewWrite }}</h3>
+      <fieldset class="stars">
+        <legend>{{ reviewRating }}</legend>
+        <label><input type="radio" name="rating" value="5" checked> 5 ★★★★★</label>
+        <label><input type="radio" name="rating" value="4"> 4 ★★★★</label>
+        <label><input type="radio" name="rating" value="3"> 3 ★★★</label>
+        <label><input type="radio" name="rating" value="2"> 2 ★★</label>
+        <label><input type="radio" name="rating" value="1"> 1 ★</label>
+      </fieldset>
+      <label for="review-name">{{ reviewName }}</label>
+      <input id="review-name" name="name" type="text" maxlength="40" autocomplete="nickname">
+      <label for="review-message">{{ reviewMessage }}</label>
+      <textarea id="review-message" name="message" rows="4" maxlength="2000" required></textarea>
+      <p class="muted small">{{ reviewShownNote }}</p>
+      <button class="button primary" type="submit">{{ reviewSend }}</button>
+      <p class="status" role="status"></p>
+    </form>
 
-  <form id="complain" class="feedback" data-kind="complaint" data-lang="{{ lang }}" data-sent="{{ complaintSent }}" data-failed="{{ sendFailed }}" data-short="{{ tooShort }}" data-bad-email="{{ badEmail }}" novalidate>
-    <h3>{{ complaintTitle }}</h3>
-    <p class="muted">{{ complaintLead }}</p>
-    <label for="complaint-message">{{ complaintMessage }}</label>
-    <textarea id="complaint-message" name="message" rows="4" maxlength="2000" required></textarea>
-    <label for="complaint-email">{{ complaintEmail }}</label>
-    <input id="complaint-email" name="email" type="email" maxlength="320" autocomplete="email">
-    <button class="button" type="submit">{{ complaintSend }}</button>
-    <p class="status" role="status"></p>
-  </form>
+    <form id="complain" class="feedback reveal" data-kind="complaint" data-lang="{{ lang }}" data-sent="{{ complaintSent }}" data-failed="{{ sendFailed }}" data-short="{{ tooShort }}" data-bad-email="{{ badEmail }}" novalidate>
+      <h3>{{ complaintTitle }}</h3>
+      <p class="muted">{{ complaintLead }}</p>
+      <label for="complaint-message">{{ complaintMessage }}</label>
+      <textarea id="complaint-message" name="message" rows="4" maxlength="2000" required></textarea>
+      <label for="complaint-email">{{ complaintEmail }}</label>
+      <input id="complaint-email" name="email" type="email" maxlength="320" autocomplete="email">
+      <button class="button" type="submit">{{ complaintSend }}</button>
+      <p class="status" role="status"></p>
+    </form>
+  </div>
 </section>
 
 <script src="{{ root }}feedback.js" defer></script>
+<script src="{{ root }}demo.js" defer></script>
