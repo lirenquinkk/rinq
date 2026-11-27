@@ -1,0 +1,99 @@
+<div class="studio-top">
+  <div class="inner">
+    <p class="studio-demo" id="demo-note"><b>{{ stDemo }}</b> <a href="#account">{{ stDemoCta }}</a></p>
+    <div class="channel-pills" id="channels" role="group" aria-label="{{ navStudio }}"></div>
+  </div>
+</div>
+
+<div class="studio">
+  <div class="studio-head">
+    <div class="studio-who">
+      <span class="avatar rise" id="avatar" aria-hidden="true"></span>
+      <div>
+        <p>{{ stAnalytics }}</p>
+        <h1 id="ch-name"></h1>
+        <span id="ch-handle"></span>
+      </div>
+    </div>
+    <div class="switch" id="range" role="group" aria-label="{{ stPeriod }}"></div>
+  </div>
+
+  <div class="studio-cols">
+    <div class="studio-main">
+      <section class="card reveal" aria-label="{{ stViews }}">
+        <div class="tabs" role="tablist" id="tabs"></div>
+        <div class="chart-wrap" id="chart-wrap"></div>
+      </section>
+      <section class="card card-pad reveal i1" aria-labelledby="top-h">
+        <div class="card-row"><h2 id="top-h">{{ stTop }}</h2><small>{{ stViews }}</small></div>
+        <div id="top"></div>
+      </section>
+    </div>
+
+    <div class="studio-side">
+      <section class="card card-pad reveal" aria-labelledby="rt-h">
+        <div class="card-row"><h2 id="rt-h">{{ stRealtime }}</h2><span class="live"><i></i>{{ stLive }}</span></div>
+        <div><span class="big-n" id="rt-subs"></span><div class="big-label">{{ stSubscribers }}</div></div>
+        <div class="split"><span class="big-n" id="rt-views"></span><div class="big-label">{{ stViews48 }}</div></div>
+        <div class="rt-bars" id="rt-bars" role="img" aria-label="{{ stViews48 }}"></div>
+        <div class="rt-axis"><span>{{ stH48 }}</span><span>{{ stNow }}</span></div>
+      </section>
+
+      <section class="card card-pad reveal i1" id="sel" aria-labelledby="sel-h"></section>
+
+      <section class="card card-pad reveal i2" aria-labelledby="plan-h">
+        <div class="card-row"><h2 id="plan-h">{{ stScheduled }}</h2><small>{{ stInRinq }}</small></div>
+        <div id="plan"></div>
+        <div class="split">
+          <label class="toggle"><span>{{ stTFolder }}</span><input type="checkbox" checked /></label>
+          <label class="toggle"><span>{{ stTDigest }}</span><input type="checkbox" checked /></label>
+          <label class="toggle"><span>{{ stTAlarm }}</span><input type="checkbox" checked /></label>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<section class="account" id="account" aria-labelledby="account-h">
+  <div class="account-card reveal">
+    <div>
+      <h2 id="account-h">{{ stAccH }}</h2>
+      <p>{{ stAccP }}</p>
+    </div>
+
+    <form class="form" id="auth-form" novalidate>
+      <label for="auth-email">{{ stEmail }}</label>
+      <input id="auth-email" name="email" type="email" autocomplete="email" required />
+      <label for="auth-pass">{{ stPassword }}</label>
+      <input id="auth-pass" name="password" type="password" autocomplete="current-password" minlength="6" required />
+      <div class="form-row">
+        <button class="btn btn-dark btn-big" type="submit" data-act="in">{{ stSignIn }}</button>
+        <button class="btn btn-ghost btn-big" type="submit" data-act="up">{{ stSignUp }}</button>
+      </div>
+      <p class="said" id="auth-said" role="status"></p>
+    </form>
+
+    <div class="form" id="signed" hidden>
+      <p id="signed-who"></p>
+      <p id="signed-plan"></p>
+      <div id="my-channels" hidden>
+        <h3>{{ stYourChannels }}</h3>
+        <ul id="my-channel-list"></ul>
+      </div>
+      <form class="form" id="add-form" novalidate>
+        <h3>{{ stAddH }}</h3>
+        <p>{{ stAddP }}</p>
+        <label for="add-link">{{ stAddLabel }}</label>
+        <input id="add-link" name="link" type="url" inputmode="url" placeholder="https://www.youtube.com/@..." autocomplete="off" />
+        <div class="form-row">
+          <button class="btn btn-dark btn-big" type="submit">{{ stAddBtn }}</button>
+          <button class="btn btn-ghost btn-big" type="button" id="sign-out">{{ stSignOut }}</button>
+        </div>
+        <p class="said" id="add-said" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script type="application/json" id="st-strings">{{ json:st }}</script>
+<script src="/studio.js" defer></script>

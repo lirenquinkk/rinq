@@ -18,6 +18,8 @@ who else sees it, for how long, and how to get it removed. rinq is run by {{ ope
 <tr><td>If you buy Pro: your plan, until when it's paid, your Telegram account number, and Telegram's payment reference.</td><td>To give you Pro, to renew or cancel it, and to refund it.</td></tr>
 <tr><td>If you write a review on the website: your rating, your words, and the name you choose to give, if any.</td><td>Reviews of 4 or 5 stars are shown on the website with that name. Lower ones are read only by us, to make rinq better.</td></tr>
 <tr><td>If you send a complaint on the website: your words, and your email if you want an answer.</td><td>To fix what went wrong and to answer you. Only we see it.</td></tr>
+<tr><td>If you connect a channel in the Studio: its link and, every hour, the public numbers of its videos: titles, publishing times, views, likes and comments.</td><td>To show how each video grows and which hours work best. A channel connected by link gives only what anyone can see on YouTube.</td></tr>
+<tr><td>If you ask for an AI breakdown of a video: the answer.</td><td>So that looking at it again costs nothing.</td></tr>
 </table>
 
 <p><strong>Voice notes and photos are not kept.</strong> When you send one, rinq passes it to the services below to
@@ -32,7 +34,8 @@ turn it into plans, then drops it. Only the resulting plans are saved, and only 
 <tr><td>Railway (server)</td><td>Runs the Telegram bot and sends reminders.</td><td>Your calendar and settings while it works on them. It keeps only its own place in the message queue.</td></tr>
 <tr><td>Telegram</td><td>Carries your messages to and from the bot, and takes Pro payments in Telegram Stars.</td><td>What you send the bot and what it sends you. We never see your card or bank details.</td></tr>
 <tr><td>Groq</td><td>Turns voice notes into text.</td><td>The recording of each voice note.</td></tr>
-<tr><td>Anthropic (Claude)</td><td>Reads the text of voice notes and photos into plans.</td><td>The text of each voice note, each photo, and today's date.</td></tr>
+<tr><td>Anthropic (Claude)</td><td>Reads the text of voice notes and photos into plans, and writes a video's breakdown when you ask for one.</td><td>The text of each voice note, each photo, and today's date; for a breakdown, the video's public numbers and the titles of your recent videos.</td></tr>
+<tr><td>Google (YouTube Data API)</td><td>Gives the public numbers of the channels you connect in the Studio.</td><td>Which channels and videos we ask about. Not your rinq account.</td></tr>
 </table>
 <p>Each of these companies handles the data under its own terms, and some of them process it outside the EU,
 including in the United States. We use them only to run rinq.</p>
@@ -43,6 +46,7 @@ including in the United States. We use them only to run rinq.</p>
 <li>A plan you delete: removed for good 60 days later, so your other devices have time to catch up.</li>
 <li>The monthly count of voice notes and photos: 13 months.</li>
 <li>The voice-note length log: 30 days.</li>
+<li>Video numbers in the Studio: hourly ones for two weeks, then one a day, 400 days at most.</li>
 <li>Reviews and complaints from the website: until you ask us to remove them. We can take a review off the page at any time.</li>
 <li>Your Pro plan and its payment reference: until you delete your account. Telegram keeps its own record of every payment.</li>
 </ul>
@@ -64,7 +68,7 @@ to your data protection authority.</p>
 an account, write to us and we'll delete it.</p>
 
 <h2>Cookies</h2>
-<p>This website sets no cookies and loads nothing from other sites. If you use the light/dark switch, your browser remembers that one choice (in its local storage, on your device only); nothing else is kept. When you send a review or a complaint, or open the reviews, the page talks to our database (Supabase) and nothing else. The apps don't use cookies either.</p>
+<p>This website sets no cookies and loads nothing from other sites. If you sign in on the Studio page, your browser keeps that sign-in in its local storage, on your device only; nothing else is kept. When you send a review or a complaint, or open the reviews, the page talks to our database (Supabase) and nothing else. The apps don't use cookies either.</p>
 
 <h2>Security</h2>
 <p>Data travels over encrypted connections (HTTPS). Each account can reach only its own data, and the database

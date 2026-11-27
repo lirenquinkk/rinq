@@ -1,164 +1,220 @@
-<section class="hero">
-  <div class="glow" aria-hidden="true"><span></span><span></span><span></span></div>
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow reveal">{{ eyebrow }}</p>
-      <h1 class="reveal">{{ homeHeadingStart }}<span class="accent">{{ homeHeadingAccent }}</span></h1>
-      <p class="lead reveal">{{ homeLead }}</p>
-      <p class="cta reveal">
-        <a class="button primary big" href="#download">{{ homeGet }}</a>
-        <a class="button big" href="https://t.me/lirencalendarbot" rel="noopener">{{ homeBot }}</a>
-      </p>
-      <p class="trust reveal">{{ trustLine }}</p>
-    </div>
+<section class="hero" aria-labelledby="hero-h">
+  <div class="float float-icon" aria-hidden="true"><div class="float-in"><img src="/logo.svg" alt="" width="78" height="78" /></div></div>
 
-    <div class="demo reveal" aria-hidden="true"
-         data-examples='[["{{ demo1Input }}","{{ demo1Title }}","{{ demo1When }}","{{ demo1Remind }}"],["{{ demo2Input }}","{{ demo2Title }}","{{ demo2When }}","{{ demo2Remind }}"],["{{ demo3Input }}","{{ demo3Title }}","{{ demo3When }}","{{ demo3Remind }}"]]'>
-      <div class="demo-input"><span class="demo-plus">+</span><span class="demo-typed">{{ demo1Input }}</span><span class="caret"></span></div>
-      <div class="demo-card is-shown">
-        <span class="demo-bar"></span>
-        <div>
-          <p class="demo-title">{{ demo1Title }}</p>
-          <p class="demo-when">{{ demo1When }}</p>
-          <p class="demo-remind">🔔 <span>{{ demo1Remind }}</span></p>
+  <div class="float float-day" aria-hidden="true">
+    <div class="float-in">
+      <div class="sheet sheet-under">
+        <span class="sheet-band">{{ dayFri }}</span><span class="sheet-num">27</span><span class="sheet-month">{{ dayMonth }}</span>
+      </div>
+      <div class="sheet sheet-torn">
+        <span class="sheet-band">{{ dayThu }}</span><span class="sheet-num">26</span><span class="sheet-month">{{ dayMonth }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="float float-tg" aria-hidden="true">
+    <div class="float-in">
+      <div class="tg-from"><span class="tg-dot"><svg viewBox="0 0 16 16" width="9" height="9"><path d="M14.5 2 1.6 7.1c-.6.2-.6 1 0 1.2l3.3 1 1.3 4.1c.2.5.8.6 1.1.2l1.9-1.9 3.4 2.5c.4.3 1 .1 1.1-.4L16 2.9c.1-.6-.5-1.1-1.5-.9z" fill="#fff"/></svg></span>{{ tgJustNow }}</div>
+      <div class="tg-bubble">
+        <span class="tg-name">rinq</span>
+        <span class="tg-title"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="#c8402a" stroke-width="1.6" stroke-linecap="round"><circle cx="8" cy="9" r="5.2"/><path d="M8 6.5V9l1.6 1.2M2.6 3.6l2-1.6M13.4 3.6l-2-1.6"/></svg>{{ wgTest }}</span>
+        <span>{{ appIn15 }}</span>
+        <span class="tg-last">{{ appTestWhen }}</span>
+        <span class="tg-time">11:45</span>
+      </div>
+      <div class="tg-keys">
+        <span>{{ tgSnooze10 }}</span><span>{{ tgSnooze60 }}</span><span class="tg-wide">{{ tgGotIt }}</span>
+      </div>
+    </div>
+  </div>
+
+  <a class="chip-new rise" href="{{ base }}/studio.html"><span>{{ heroNew }}</span>{{ heroNewText }}</a>
+  <h1 id="hero-h" class="hero-h words">{{ heroH1 }} <mark>{{ heroH1Mark }}</mark></h1>
+  <p class="hero-lead rise i3">{{ heroLead }}</p>
+  <div class="hero-cta rise i4">
+    <a class="btn btn-dark btn-big" href="#download">{{ heroDownload }}</a>
+    <a class="btn btn-ghost btn-big" href="{{ base }}/studio.html">{{ heroStudio }}</a>
+  </div>
+
+  <div class="win-stage rise i5">
+    <div class="win-scale">
+      <div class="win" role="img" aria-label="{{ appAria }}">
+        <div class="win-bar">
+          <img class="win-logo" src="/logo.svg" alt="" width="26" height="26" />
+          <span class="w-btn">{{ appToday }}</span>
+          <span class="w-icon"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg></span>
+          <span class="w-icon"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 3 5 5-5 5"/></svg></span>
+          <span class="w-month">{{ appMonth }}<svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#53575e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></span>
+          <span class="w-space"></span>
+          <button class="w-qa" type="button" id="qa" title="{{ appReplay }}">
+            <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="#53575e" stroke-width="1.5" stroke-linecap="round"><path d="M8 2.5v11M2.5 8h11"/></svg>
+            <span class="w-qa-text" id="qa-text" data-placeholder="{{ appQa }}">{{ appQa }}</span><span class="w-caret"></span>
+          </button>
+          <span class="w-space"></span>
+          <span class="w-icon"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M1.5 4h4.5l1.5 1.5h7V13h-13z"/></svg></span>
+          <span class="w-icon"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="7" cy="7" r="4.5"/><path d="m10.4 10.4 3.6 3.6"/></svg></span>
+          <span class="w-new"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"><path d="M8 2.5v11M2.5 8h11"/></svg>{{ appNew }}</span>
+          <span class="w-icon"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="8" cy="8" r="6.2"/><path d="M6.3 6.3a1.8 1.8 0 1 1 2.5 1.7c-.5.2-.8.6-.8 1.1v.4"/><circle cx="8" cy="11.6" r=".4" fill="currentColor"/></svg></span>
+          <span class="w-icon"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="8" cy="8" r="2.3"/><path d="M8 1.6v1.9M8 12.5v1.9M1.6 8h1.9M12.5 8h1.9M3.5 3.5l1.3 1.3M11.2 11.2l1.3 1.3M3.5 12.5l1.3-1.3M11.2 4.8l1.3-1.3"/></svg></span>
+          <span class="w-caption">
+            <span><svg viewBox="0 0 10 10" width="10" height="10" stroke="currentColor"><path d="M0 5.5h10"/></svg></span>
+            <span><svg viewBox="0 0 10 10" width="10" height="10" fill="none" stroke="currentColor"><rect x=".5" y=".5" width="9" height="9" rx="1.5"/></svg></span>
+            <span><svg viewBox="0 0 10 10" width="10" height="10" stroke="currentColor"><path d="m.5.5 9 9M9.5.5l-9 9"/></svg></span>
+          </span>
+        </div>
+        <div class="win-body">
+          <div class="w-month-card">
+            <div class="w-weekdays" id="weekdays"></div>
+            <div class="w-grid" id="grid">
+              <div class="w-snack" id="snack"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="#6fd49a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8.5 3.2 3L13 4.5"/></svg>{{ appAdded }}</div>
+            </div>
+          </div>
+          <div class="w-panel">
+            <div class="w-next">
+              <span class="w-next-label">{{ appUpNext }}</span>
+              <span class="w-next-title">{{ wgTest }}</span>
+              <span class="w-next-when">{{ appTestWhen }}</span>
+              <span class="w-next-count"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.8V8l2.2 1.4"/></svg>{{ appIn15 }}</span>
+              <div class="w-energy"><span>{{ appEnergy }}</span><span class="w-dots"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i></span></div>
+            </div>
+            <div class="w-day">
+              <div class="w-day-head"><div><b>{{ appFriday }}</b><span>{{ appDate }}</span></div><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2.5v11M2.5 8h11"/></svg></div>
+              <div class="w-agenda">
+                <div class="w-folder"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="#d9472e" stroke-width="1.6" stroke-linejoin="round"><path d="M1.5 4h4.5l1.5 1.5h7V13h-13z"/></svg><span>{{ wgFolder }}</span><svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="#53575e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 3 5 5-5 5"/></svg><em>08:55–22:25</em></div>
+                <div class="w-item is-past c-blue"><span class="w-time">10:00<small>10:45</small></span><i></i><span><b>{{ wgEnglish }}</b></span></div>
+                <div class="w-item c-amber"><span class="w-time">12:00<small>12:45</small></span><i></i><span><b>{{ wgTest }}</b><small>{{ appTestNote }}</small></span></div>
+                <div class="w-item c-violet"><span class="w-time">15:00<small>16:00</small></span><i></i><span><b>{{ wgCall }}</b><small>{{ appCallNote }}</small></span></div>
+                <div class="w-item c-pink"><span class="w-time">20:00<small>22:00</small></span><i></i><span><b>{{ wgMovie }}</b></span></div>
+              </div>
+            </div>
+            <div class="w-tg"><svg viewBox="0 0 16 16" width="14" height="14" fill="#2f7d4f"><path d="M14.5 2 1.6 7.1c-.6.2-.6 1 0 1.2l3.3 1 1.3 4.1c.2.5.8.6 1.1.2l1.9-1.9 3.4 2.5c.4.3 1 .1 1.1-.4L16 2.9c.1-.6-.5-1.1-1.5-.9z"/></svg>{{ appTg }}</div>
+          </div>
         </div>
       </div>
-      <div class="demo-devices">
-        <span class="device is-on"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>{{ demoPc }}</span>
-        <span class="device is-on"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>{{ demoPhone }}</span>
-        <span class="device is-on"><svg viewBox="0 0 24 24"><path d="M21 4 3 11l6 2 2 6 3-4 5 4z"/><path d="m9 13 8-6"/></svg>Telegram</span>
+      <div class="toast" id="toast" aria-hidden="true">
+        <div class="toast-head"><img src="/logo.svg" alt="" width="16" height="16" />rinq<span></span><svg viewBox="0 0 16 16" width="14" height="14" fill="#53575e"><circle cx="3.5" cy="8" r="1"/><circle cx="8" cy="8" r="1"/><circle cx="12.5" cy="8" r="1"/></svg><svg viewBox="0 0 10 10" width="12" height="12" stroke="#53575e"><path d="m1 1 8 8M9 1 1 9"/></svg></div>
+        <div class="toast-body"><b>{{ wgTest }}</b><span>{{ appIn15 }} · {{ appTestWhen }}</span></div>
+        <div class="toast-pick"><span>{{ appTenMin }}<svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#53575e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></span></div>
+        <div class="toast-actions"><span>{{ appSnooze }}</span><span>{{ appDismiss }}</span></div>
       </div>
     </div>
   </div>
+  <script type="application/json" id="grid-strings">{{ json:wg }}</script>
 </section>
 
-<section class="shots wrap" aria-label="{{ shotsLabel }}">
-  <figure class="window reveal">
-    <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>rinq</span></div>
-    <img src="{{ root }}shot-pc-{{ lang }}.png" alt="{{ shotPcAlt }}" width="1200" height="760" loading="lazy">
-  </figure>
-  <figure class="phone reveal">
-    <img src="{{ root }}shot-phone-{{ lang }}.png" alt="{{ shotPhoneAlt }}" width="390" height="844" loading="lazy">
-  </figure>
+<section class="platforms" aria-labelledby="platforms-h">
+  <p id="platforms-h" class="eyebrow">{{ platTitle }}</p>
+  <p class="platform-list"><span>Windows</span><span>Android</span><span>Telegram</span><span>YouTube</span><span>TikTok</span></p>
 </section>
 
-<section class="features wrap" aria-labelledby="features-title">
-  <h2 id="features-title" class="section-title reveal">{{ featuresTitle }}</h2>
-  <div class="feature-grid">
-    <article class="reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13 7 4 4"/></svg></span><h3>{{ f1Title }}</h3><p>{{ f1Text }}</p></article>
-    <article class="reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></span><h3>{{ f2Title }}</h3><p>{{ f2Text }}</p></article>
-    <article class="reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></svg></span><h3>{{ f3Title }}</h3><p>{{ f3Text }}</p></article>
-    <article class="reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span><h3>{{ f4Title }}</h3><p>{{ f4Text }}</p></article>
-    <article class="reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/></svg></span><h3>{{ f5Title }}</h3><p>{{ f5Text }}</p></article>
-    <article class="reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><h3>{{ f6Title }}</h3><p>{{ f6Text }}</p></article>
+<section class="manifesto" aria-label="{{ manLabel }}">
+  <p class="reveal">
+    {{ man1 }}
+    <svg viewBox="0 0 30 30" width="30" height="30" fill="none" stroke="#d8d8dc" stroke-width="1.8" aria-hidden="true"><circle cx="15" cy="15" r="10"/><path d="M15 9v6l4 3"/></svg>
+    {{ man2 }}
+    <svg viewBox="0 0 30 30" width="30" height="30" fill="none" stroke="#d8d8dc" stroke-width="1.8" aria-hidden="true"><path d="M6 22V12M12 22V7M18 22v-6M24 22V10"/></svg>
+    <span class="lit">{{ man3 }}</span>
+    <svg viewBox="0 0 30 30" width="30" height="30" fill="none" stroke="#e4583f" stroke-width="1.8" aria-hidden="true"><path d="M9 20V13a6 6 0 0 1 12 0v7l2 2H7z"/><path d="M13 24h4"/></svg>
+    <span class="lit">{{ man4 }}</span>
+  </p>
+</section>
+
+<section class="section" aria-labelledby="cal-h">
+  <div class="section-head">
+    <span class="tag"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1.5" y="2.5" width="9" height="8" rx="1.5"/><path d="M1.5 5h9M4 1v2.5M8 1v2.5"/></svg>{{ navCalendar }}</span>
+    <h2 id="cal-h" class="words">{{ bH2 }}</h2>
+    <p>{{ bLead }}</p>
   </div>
-</section>
-
-<section class="telegram">
-  <div class="wrap tg-grid">
-    <div class="reveal">
-      <h2 class="section-title">{{ tgTitle }}</h2>
-      <p class="lead">{{ tgText }}</p>
-      <p><a class="button primary big" href="https://t.me/lirencalendarbot" rel="noopener">{{ homeBot }}</a></p>
-    </div>
-    <div class="chat reveal" aria-hidden="true">
-      <div class="bubble me voice"><span class="play">▶</span><span class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="len">0:04</span></div>
-      <div class="bubble bot">
-        <p><strong>{{ tgAdded }}</strong></p>
-        <p>{{ demo1Title }}<br>{{ demo1When }}<br>🔔 {{ demo1Remind }}</p>
-        <div class="keys"><span>{{ tgUndo }}</span><span>{{ tgDate }}</span><span>{{ tgTime }}</span></div>
+  <div class="bento">
+    <article class="tile tile-wide reveal">
+      <div class="forward">
+        <p class="fwd-msg"><span>{{ b1From }}</span>{{ b1Msg }}</p>
+        <svg viewBox="0 0 28 14" width="28" height="14" fill="none" stroke="#9a9aa0" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M1 7h24M20 2l5 5-5 5"/></svg>
+        <div class="fwd-out">
+          <span><b>{{ b1Item1 }}</b><em>{{ b1Item1When }}</em></span>
+          <span><b>{{ wgTest }}</b><em>{{ b1Item2When }}</em></span>
+        </div>
       </div>
-      <div class="bubble bot remind"><p>⏰ {{ tgReminder }}</p></div>
-    </div>
+      <div><h3>{{ b1H }}</h3><p>{{ b1P }}</p></div>
+    </article>
+    <article class="tile tile-board reveal i1">
+      <p class="board">{{ b2Board }}<br />{{ b2Board2 }}</p>
+      <div><h3>{{ b2H }}</h3><p>{{ b2P }}</p></div>
+    </article>
+    <article class="tile tile-rose reveal">
+      <ul class="onoff">
+        <li><span>{{ b3Pc }}</span><b>{{ b3On }}</b></li>
+        <li><span>Android</span><b>{{ b3On }}</b></li>
+        <li><span>Telegram</span><b>{{ b3On }}</b></li>
+      </ul>
+      <div><h3>{{ b3H }}</h3><p>{{ b3P }}</p></div>
+    </article>
+    <article class="tile reveal i1">
+      <div class="voice" aria-hidden="true"><span class="voice-mic"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"><path d="M8 2v8M5 7v3a3 3 0 0 0 6 0V7"/></svg></span><span class="voice-wave"></span><span>0:07</span></div>
+      <div><h3>{{ b4H }}</h3><p>{{ b4P }}</p></div>
+    </article>
+    <article class="tile tile-dark reveal i2">
+      <p class="feed">utro-svodka.vercel.app <span>→</span> {{ b5Folder }}</p>
+      <div><h3>{{ b5H }}</h3><p>{{ b5P }}</p></div>
+    </article>
   </div>
 </section>
 
-<section id="pro" class="pro wrap" aria-labelledby="pro-title">
-  <h2 id="pro-title" class="section-title reveal">{{ proTitle }}</h2>
-  <p class="lead reveal">{{ proLead }}</p>
-  <div class="plans">
-    <article class="plan reveal">
-      <h3>{{ planFreeTitle }}</h3>
-      <p class="price">{{ planFreePrice }}</p>
-      <ul>
-        <li>{{ planFree1 }}</li>
-        <li>{{ planFree2 }}</li>
-        <li>{{ planFree3 }}</li>
-      </ul>
-      <p><a class="button big" href="#download">{{ homeGet }}</a></p>
-    </article>
-    <article class="plan is-pro reveal">
-      <h3>{{ planProTitle }}</h3>
-      <p class="price">{{ planProPrice }}</p>
-      <ul>
-        <li>{{ planPro1 }}</li>
-        <li>{{ planPro2 }}</li>
-        <li>{{ planPro3 }}</li>
-      </ul>
-      <p><a class="button primary big" href="https://t.me/lirencalendarbot?start=pro" rel="noopener">{{ planProGet }}</a></p>
-    </article>
+<section class="section" aria-labelledby="studio-h">
+  <div class="section-head">
+    <span class="tag"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 10V6M5 10V3M8 10V7M11 10V4"/></svg>{{ navStudio }}</span>
+    <h2 id="studio-h" class="words">{{ sH2 }}</h2>
+    <p>{{ sLead }}</p>
   </div>
-  <p class="note reveal">{{ proNote }} <a href="refunds.html">{{ proRefunds }}</a></p>
+  <div class="teaser reveal">
+    <svg class="teaser-chart" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="teaser-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e4583f" stop-opacity=".35"/><stop offset="1" stop-color="#e4583f" stop-opacity="0"/></linearGradient></defs>
+      <path d="M0 52 C8 50 12 49 18 47 S28 44 34 40 S40 18 46 16 S54 30 60 33 S70 36 76 30 S86 22 92 20 S98 14 100 12 L100 60 L0 60 Z" fill="url(#teaser-fill)"/>
+      <path d="M0 52 C8 50 12 49 18 47 S28 44 34 40 S40 18 46 16 S54 30 60 33 S70 36 76 30 S86 22 92 20 S98 14 100 12" fill="none" stroke="#e4583f" stroke-width="0.6" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <div class="teaser-card teaser-a">
+      <span class="eyebrow">{{ sCardLabel }}</span>
+      <b>{{ sCardTitle }}</b>
+      <span class="pills"><span class="pill-hot">{{ sCardX }}</span><span>{{ sCardViews }}</span></span>
+      <span class="bars" aria-hidden="true"><i></i><i class="hot"></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+    </div>
+    <div class="teaser-card teaser-b">
+      <span class="pill-dark">{{ sAiTag }}</span>
+      <span>{{ sAiText }}</span>
+      <span class="muted">{{ sAiIdea }}</span>
+      <span class="pill-line">{{ sAiAdd }}</span>
+    </div>
+  </div>
+  <div class="trio">
+    <div><h3>{{ s1H }}</h3><p>{{ s1P }}</p></div>
+    <div><h3>{{ s2H }}</h3><p>{{ s2P }}</p></div>
+    <div><h3>{{ s3H }}</h3><p>{{ s3P }}</p></div>
+  </div>
 </section>
 
-<section id="download" class="download" aria-labelledby="download-title">
-  <div class="wrap">
-    <h2 id="download-title" class="section-title reveal">{{ downloadTitle }}</h2>
-    <p class="lead reveal">{{ downloadLead }}</p>
-    <div class="get">
-      <a class="get-card reveal" href="{{ downloadWindowsHref }}">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10 4.5v7H3zM11 4.3 21 3v8.5H11zM3 12.5h7v7l-7-1zM11 12.5h10V21l-10-1.4z"/></svg>
-        <span><strong>{{ downloadWindows }}</strong><small>{{ downloadWindowsNote }}</small></span>
-      </a>
-      <a class="get-card reveal" href="{{ downloadAndroidHref }}">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10h14v8a1 1 0 0 1-1 1h-1v3h-2v-3H9v3H7v-3H6a1 1 0 0 1-1-1zM6 9a6 6 0 0 1 12 0zM7.5 3.5 9 6M16.5 3.5 15 6"/></svg>
-        <span><strong>{{ downloadAndroid }}</strong><small>{{ downloadAndroidNote }}</small></span>
-      </a>
+<section class="facts" aria-label="{{ factsLabel }}">
+  <div class="fact"><span class="fact-n"><span class="roll" data-roll="24">24</span><em>{{ f1Unit }}</em></span><p>{{ f1Text }}</p></div>
+  <div class="fact"><span class="fact-n"><span class="roll" data-roll="3">3</span><em>{{ f2Unit }}</em></span><p>{{ f2Text }}</p></div>
+  <div class="fact"><span class="fact-n"><span class="roll" data-roll="1">1</span><em>{{ f3Unit }}</em></span><p>{{ f3Text }}</p></div>
+</section>
+
+<section id="download" class="download" aria-labelledby="download-h">
+  <div class="download-card reveal">
+    <img src="/logo.svg" alt="" width="64" height="64" class="download-logo" />
+    <h2 id="download-h" class="words">{{ ctaH }}</h2>
+    <p>{{ downloadFree }}</p>
+    <div class="download-buttons">
+      <a class="btn btn-dark btn-big" href="{{ downloadWindowsHref }}">{{ dlWindows }}</a>
+      <a class="btn btn-ghost btn-big" href="{{ androidHref }}">{{ dlAndroid }}</a>
+      <a class="btn btn-ghost btn-big" href="{{ botHref }}" rel="noopener">{{ dlBot }}</a>
     </div>
-    <details class="reveal"><summary>{{ warnWindowsTitle }}</summary><p>{{ warnWindowsText }}</p></details>
-    <details class="reveal"><summary>{{ warnAndroidTitle }}</summary><p>{{ warnAndroidText }}</p></details>
+    <p class="note">{{ downloadSoon }}</p>
     <p class="note">{{ noIphone }}</p>
   </div>
 </section>
 
-<section id="reviews" class="reviews wrap" aria-labelledby="reviews-title">
-  <h2 id="reviews-title" class="section-title reveal">{{ reviewsTitle }}</h2>
-  <div class="review-list" data-empty="{{ reviewsEmpty }}" data-failed="{{ reviewsFailed }}" data-stars="{{ reviewStars }}" data-anonymous="{{ reviewAnonymous }}" data-founder="{{ reviewFounder }}" aria-live="polite">
-    <p class="muted">{{ reviewsLoading }}</p>
-  </div>
-
-  <div class="forms">
-    <form class="feedback reveal" data-kind="review" data-lang="{{ lang }}" data-sent="{{ reviewSent }}" data-failed="{{ sendFailed }}" data-short="{{ tooShort }}" novalidate>
-      <h3>{{ reviewWrite }}</h3>
-      <fieldset class="stars">
-        <legend>{{ reviewRating }}</legend>
-        <label><input type="radio" name="rating" value="5" checked> 5 ★★★★★</label>
-        <label><input type="radio" name="rating" value="4"> 4 ★★★★</label>
-        <label><input type="radio" name="rating" value="3"> 3 ★★★</label>
-        <label><input type="radio" name="rating" value="2"> 2 ★★</label>
-        <label><input type="radio" name="rating" value="1"> 1 ★</label>
-      </fieldset>
-      <label for="review-name">{{ reviewName }}</label>
-      <input id="review-name" name="name" type="text" maxlength="40" autocomplete="nickname">
-      <label for="review-message">{{ reviewMessage }}</label>
-      <textarea id="review-message" name="message" rows="4" maxlength="2000" required></textarea>
-      <p class="muted small">{{ reviewShownNote }}</p>
-      <button class="button primary" type="submit">{{ reviewSend }}</button>
-      <p class="status" role="status"></p>
-    </form>
-
-    <form id="complain" class="feedback reveal" data-kind="complaint" data-lang="{{ lang }}" data-sent="{{ complaintSent }}" data-failed="{{ sendFailed }}" data-short="{{ tooShort }}" data-bad-email="{{ badEmail }}" novalidate>
-      <h3>{{ complaintTitle }}</h3>
-      <p class="muted">{{ complaintLead }}</p>
-      <label for="complaint-message">{{ complaintMessage }}</label>
-      <textarea id="complaint-message" name="message" rows="4" maxlength="2000" required></textarea>
-      <label for="complaint-email">{{ complaintEmail }}</label>
-      <input id="complaint-email" name="email" type="email" maxlength="320" autocomplete="email">
-      <button class="button" type="submit">{{ complaintSend }}</button>
-      <p class="status" role="status"></p>
-    </form>
-  </div>
+<section class="reviews-call reveal">
+  <h2>{{ fbHeading }}</h2>
+  <p>{{ fbTeaser }}</p>
+  <a class="btn btn-ghost btn-big" href="{{ base }}/reviews.html">{{ fbOpen }}</a>
 </section>
-
-<script src="{{ root }}feedback.js" defer></script>
-<script src="{{ root }}demo.js" defer></script>

@@ -7,19 +7,27 @@ the website and the built apps.
 
 ## The website
 
-Plain static pages in English (at the root) and Russian (under `ru/`): the home page with downloads,
-Pro, reviews and complaints, and the terms, privacy policy and refund policy. No cookies, no
-analytics, nothing loaded from other sites. The only script sends and reads reviews and complaints
-(`public.feedback`, with the publishable key).
+Static pages in English (at the root), Russian (under `ru/`) and Ukrainian (under `uk/`):
+- the home page, with the rinq window typing a plan into quick add, and the downloads;
+- the Studio for YouTube and TikTok creators: an example channel with made-up numbers, and signing in
+  to a rinq account to connect a channel;
+- the plans (Free, Pro, Studio, Mix), the reviews and complaints;
+- the terms, the privacy policy and the refund policy.
 
-- `npm run build` writes `dist/`; `npm test` checks it (every string in both languages, no blank
-  left unfilled, every link and image exists, every image has alt text, no secret key).
-- `src/strings.json`: every string, `en` and `ru`. Keys ending in `Html` go in unescaped.
+No cookies and no analytics. Everything comes from this site, under a strict Content-Security-Policy
+(`vercel.json`, and the same in each page's head): no inline styles, no inline scripts, and the only
+outside address the pages talk to is the Supabase project, with the publishable key.
+
+- `npm run build` writes `dist/`; `npm test` checks it: every string in all three languages, no blank
+  left unfilled, every link and image exists, no style attribute or inline script, no secret key, and
+  that the prices on the plans page and in the terms agree. `npm run serve` shows `dist/` locally.
+- `src/strings.json`: every string, `en`, `ru` and `uk`. Keys ending in `Html` go in unescaped.
+  `{{ json:st }}` puts every string whose key starts with `st` into a page as JSON, for its script.
 - `src/layout.html`: header and footer around every page.
-- `src/pages/index.html`: the home page, one template for both languages.
+- `src/pages/index.html`, `studio.html`, `pro.html`, `reviews.html`: one template for all languages.
 - `src/pages/<name>.<lang>.html`: the long documents, one file per language.
-- `src/static/`: the stylesheet, the form script, the icon and the screenshots (taken from the apps'
-  browser previews, in both languages).
+- `src/static/`: the stylesheet, the Onest font, the logo and the scripts (`site.js` motion and the home
+  window, `roll.js` rolling numbers, `studio.js`, `plans.js`, `reviews.js`).
 
 **Downloads** come from the public repository lirenquinkk/rinq: its `android` and `windows` releases
 always hold the newest `rinq.apk` and `rinq-setup.exe`, which the phone app's "Android APK" workflow and
