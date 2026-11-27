@@ -32,16 +32,18 @@
 
     <div class="studio-side">
       <section class="card card-pad reveal" aria-labelledby="rt-h">
-        <div class="card-row"><h2 id="rt-h">{{ stRealtime }}</h2><span class="live"><i></i>{{ stLive }}</span></div>
+        <div class="card-row"><h2 id="rt-h">{{ stRealtime }}</h2><span class="live"><i></i><span id="rt-live">{{ stLive }}</span></span></div>
         <div><span class="big-n" id="rt-subs"></span><div class="big-label">{{ stSubscribers }}</div></div>
-        <div class="split"><span class="big-n" id="rt-views"></span><div class="big-label">{{ stViews48 }}</div></div>
+        <div class="split"><span class="big-n" id="rt-views"></span><div class="big-label" id="rt-views-label">{{ stViews48 }}</div></div>
         <div class="rt-bars" id="rt-bars" role="img" aria-label="{{ stViews48 }}"></div>
-        <div class="rt-axis"><span>{{ stH48 }}</span><span>{{ stNow }}</span></div>
+        <div class="rt-axis" id="rt-axis"><span>{{ stH48 }}</span><span>{{ stNow }}</span></div>
       </section>
 
-      <section class="card card-pad reveal i1" id="sel" aria-labelledby="sel-h"></section>
+      <section class="card card-pad reveal i1 forecast" id="fc" aria-labelledby="fc-h"></section>
 
-      <section class="card card-pad reveal i2" aria-labelledby="plan-h">
+      <section class="card card-pad reveal i2" id="sel" aria-labelledby="sel-h"></section>
+
+      <section class="card card-pad reveal i3" id="plan-card" aria-labelledby="plan-h">
         <div class="card-row"><h2 id="plan-h">{{ stScheduled }}</h2><small>{{ stInRinq }}</small></div>
         <div id="plan"></div>
         <div class="split">
@@ -97,4 +99,5 @@
 </section>
 
 <script type="application/json" id="st-strings">{{ json:st }}</script>
+<script src="/forecast.js" defer></script>
 <script src="/studio.js" defer></script>
