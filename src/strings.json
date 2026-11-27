@@ -317,7 +317,12 @@
     "updatedHtml": "27 November 2026",
     "footNoCookies": "This website sets no cookies and does not track you. If you sign in on the Studio page, your browser keeps that sign-in on your device.",
     "navRefunds": "Refunds",
-    "ytNoticeHtml": "The Studio uses YouTube API Services. By connecting a channel you agree to the <a href=\"https://www.youtube.com/t/terms\">YouTube Terms of Service</a>; Google handles what it sees under the <a href=\"https://policies.google.com/privacy\">Google Privacy Policy</a>."
+    "ytNoticeHtml": "The Studio uses YouTube API Services. By connecting a channel you agree to the <a href=\"https://www.youtube.com/t/terms\">YouTube Terms of Service</a>; Google handles what it sees under the <a href=\"https://policies.google.com/privacy\">Google Privacy Policy</a>.",
+    "title_studio-tiktok": "TikTok - rinq",
+    "desc_studio-tiktok": "Connecting TikTok to the rinq Studio is coming soon.",
+    "ttH1": "Connecting TikTok is coming soon.",
+    "ttLead": "TikTok will send you back here once the Studio can read your account. Until then, nothing is read or kept.",
+    "ttBack": "Back to the Studio"
   },
   "ru": {
     "navPrivacy": "Конфиденциальность",
@@ -637,7 +642,12 @@
     "updatedHtml": "27 ноября 2026",
     "footNoCookies": "Этот сайт не ставит cookie и не следит за вами. Если вы входите на странице Студии, вход хранит ваш браузер, на вашем устройстве.",
     "navRefunds": "Возвраты",
-    "ytNoticeHtml": "Студия использует сервисы YouTube API. Подключая канал, вы соглашаетесь с <a href=\"https://www.youtube.com/t/terms\">Условиями использования YouTube</a>; то, что видит Google, он обрабатывает по <a href=\"https://policies.google.com/privacy\">Политике конфиденциальности Google</a>."
+    "ytNoticeHtml": "Студия использует сервисы YouTube API. Подключая канал, вы соглашаетесь с <a href=\"https://www.youtube.com/t/terms\">Условиями использования YouTube</a>; то, что видит Google, он обрабатывает по <a href=\"https://policies.google.com/privacy\">Политике конфиденциальности Google</a>.",
+    "title_studio-tiktok": "TikTok - rinq",
+    "desc_studio-tiktok": "Подключение TikTok к Студии rinq скоро появится.",
+    "ttH1": "Подключение TikTok скоро появится.",
+    "ttLead": "TikTok вернёт вас сюда, когда Студия научится читать ваш аккаунт. До тех пор ничего не читается и не хранится.",
+    "ttBack": "Вернуться в Студию"
   },
   "uk": {
     "skipLink": "Перейти до вмісту",
@@ -957,6 +967,11 @@
     "updatedHtml": "27 листопада 2026",
     "footNoCookies": "Цей сайт не ставить cookie і не стежить за вами. Якщо ви входите на сторінці Студії, вхід зберігає ваш браузер, на вашому пристрої.",
     "navRefunds": "Повернення",
-    "ytNoticeHtml": "Студія використовує сервіси YouTube API. Підключаючи канал, ви погоджуєтеся з <a href=\"https://www.youtube.com/t/terms\">Умовами використання YouTube</a>; те, що бачить Google, він обробляє за <a href=\"https://policies.google.com/privacy\">Політикою конфіденційності Google</a>."
+    "ytNoticeHtml": "Студія використовує сервіси YouTube API. Підключаючи канал, ви погоджуєтеся з <a href=\"https://www.youtube.com/t/terms\">Умовами використання YouTube</a>; те, що бачить Google, він обробляє за <a href=\"https://policies.google.com/privacy\">Політикою конфіденційності Google</a>.",
+    "title_studio-tiktok": "TikTok - rinq",
+    "desc_studio-tiktok": "Підключення TikTok до Студії rinq скоро з’явиться.",
+    "ttH1": "Підключення TikTok скоро з’явиться.",
+    "ttLead": "TikTok поверне вас сюди, коли Студія навчиться читати ваш обліковий запис. Доти нічого не читається й не зберігається.",
+    "ttBack": "Повернутися до Студії"
   }
 }
