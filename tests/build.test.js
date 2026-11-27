@@ -138,3 +138,19 @@ test('the prices: Pro 150, Studio 200, Mix 300 Stars a month, a year is ten mont
     assert.doesNotMatch(terms, /\b200 Telegram Stars|\b100 voice|\b100 голос/, lang);
   }
 });
+
+// YouTube API Services Developer Policies, III.A: the terms bind users to YouTube's terms, the privacy
+// policy says the site uses YouTube API Services and links Google's, and the Studio says so where a
+// channel is connected.
+test('the YouTube API Services notices are where YouTube asks for them, in every language', () => {
+  for (const lang of LANGS) {
+    const prefix = lang === 'en' ? '' : `${lang}/`;
+    assert.match(read(`${prefix}terms.html`), /href="https:\/\/www\.youtube\.com\/t\/terms"/, `${lang} terms`);
+    const privacy = read(`${prefix}privacy.html`);
+    assert.match(privacy, /YouTube API/, `${lang} privacy`);
+    assert.match(privacy, /href="https:\/\/policies\.google\.com\/privacy"/, `${lang} privacy`);
+    assert.match(privacy, /href="https:\/\/security\.google\.com\/settings\/security\/permissions"/, `${lang} privacy`);
+    const studio = read(`${prefix}studio.html`);
+    assert.match(studio, /class="yt-notice">[^<]*<a href="https:\/\/www\.youtube\.com\/t\/terms">/, `${lang} studio`);
+  }
+});
