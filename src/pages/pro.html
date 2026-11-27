@@ -1,0 +1,72 @@
+<section class="plans-head">
+  <span class="tag rise">{{ navPricing }}</span>
+  <h1 class="words">{{ prH1 }}</h1>
+  <p class="rise i2">{{ prLead }}</p>
+  <div class="switch rise i3" role="group" aria-label="{{ prPeriod }}" id="period">
+    <button type="button" data-period="month" aria-pressed="true">{{ prMonth }}</button>
+    <button type="button" data-period="year" aria-pressed="false">{{ prYear }}</button>
+  </div>
+</section>
+
+<div class="plans" data-per-month="{{ prPerMonth }}" data-per-year="{{ prPerYear }}" data-save-year="{{ prSaveYear }}" data-save-mix="{{ prSaveMix }}" data-locale="{{ stLocale }}">
+  <section class="plan reveal" aria-labelledby="plan-free">
+    <div class="plan-top"><h2 id="plan-free">{{ prFreeName }}</h2></div>
+    <p class="plan-lede">{{ prFreeLede }}</p>
+    <div class="plan-price"><b>0</b><span>{{ prForever }}</span></div>
+    <p class="plan-save"></p>
+    <a class="btn btn-ghost btn-big" href="{{ base }}/index.html#download">{{ prGet }}</a>
+    <ul>
+      <li><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{{ prFree1 }}</li>
+      <li><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{{ prFree2 }}</li>
+      <li><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{{ prFree3 }}</li>
+      <li><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{{ prFree4 }}</li>
+    </ul>
+  </section>
+
+  <section class="plan reveal i1" aria-labelledby="plan-pro">
+    <div class="plan-top"><h2 id="plan-pro">Pro</h2></div>
+    <p class="plan-lede">{{ prProLede }}</p>
+    <div class="plan-price"><b class="roll" data-month="150">150</b><span class="per">{{ prPerMonth }}</span></div>
+    <p class="plan-save" data-save="year"></p>
+    <a class="btn btn-dark btn-big" href="{{ prBotHref }}" rel="noopener">{{ prBuy }}</a>
+    <ul>
+      <li><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{{ prPro1 }}</li>
+      <li><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{{ prPro2 }}</li>
+      <li><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{{ prPro3 }}</li>
+    </ul>
+  </section>
+
+  <section class="plan reveal i2" aria-labelledby="plan-studio">
+    <div class="plan-top"><h2 id="plan-studio">{{ prStudioName }}</h2></div>
+    <p class="plan-lede">{{ prStudioLede }}</p>
+    <div class="plan-price"><b class="roll" data-month="200">200</b><span class="per">{{ prPerMonth }}</span></div>
+    <p class="plan-save" data-save="year"></p>
+    <span class="btn btn-ghost btn-big is-off" aria-disabled="true">{{ prSoon }}</span>
+    <ul>
+      <li><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{{ prStudio1 }}</li>
+      <li><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{{ prStudio2 }}</li>
+      <li><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{{ prStudio3 }}</li>
+      <li><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{{ prStudio4 }}</li>
+      <li><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{{ prStudio5 }}</li>
+    </ul>
+  </section>
+
+  <section class="plan plan-dark reveal i3" aria-labelledby="plan-mix">
+    <div class="plan-top"><h2 id="plan-mix">{{ prMixName }}</h2><span class="plan-best">{{ prBest }}</span></div>
+    <p class="plan-lede">{{ prMixLede }}</p>
+    <div class="plan-price"><b class="roll" data-month="300">300</b><span class="per">{{ prPerMonth }}</span></div>
+    <p class="plan-save is-good" data-save="mix">{{ prSaveMix }}</p>
+    <span class="btn btn-ghost btn-big is-off" aria-disabled="true">{{ prSoon }}</span>
+    <ul>
+      <li><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{{ prMix1 }}</li>
+      <li><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{{ prMix2 }}</li>
+      <li><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{{ prMix3 }}</li>
+    </ul>
+  </section>
+</div>
+
+<div class="plan-notes">
+  <p class="reveal"><b>{{ prStarsHead }}</b> {{ prStars }}</p>
+  <p class="dashed reveal i1"><b>{{ prCardHead }}</b> {{ prCard }}</p>
+</div>
+<script src="/plans.js" defer></script>

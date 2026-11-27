@@ -1,0 +1,51 @@
+<section class="reviews-head">
+  <h1 class="words">{{ fbHeading }}</h1>
+  <p class="lead rise i1">{{ fbIntro }}</p>
+</section>
+
+<section id="reviews" class="section reviews">
+  <div class="reviews-layout">
+    <div class="review-list" id="review-list" data-lang="{{ lang }}" data-none="{{ fbNone }}" data-noname="{{ fbNoName }}"
+      data-stars1="{{ fbStars1 }}" data-stars2="{{ fbStars2 }}" data-stars3="{{ fbStars3 }}" data-stars4="{{ fbStars4 }}" data-stars5="{{ fbStars5 }}">
+      <p class="note">{{ fbLoading }}</p>
+    </div>
+    <form class="review-form" id="review-form" data-lang="{{ lang }}" data-ok="{{ fbOk }}" data-quiet="{{ fbOkQuiet }}" data-bad="{{ fbBad }}" data-need="{{ fbNeedRating }}">
+      <h2>{{ fbFormHeading }}</h2>
+      <fieldset class="stars">
+        <legend>{{ fbRatingLabel }}</legend>
+        <div class="star-row">
+          <input id="star5" name="rating" type="radio" value="5" /><label for="star5"><span class="sr-only">{{ fbStars5 }}</span></label>
+          <input id="star4" name="rating" type="radio" value="4" /><label for="star4"><span class="sr-only">{{ fbStars4 }}</span></label>
+          <input id="star3" name="rating" type="radio" value="3" /><label for="star3"><span class="sr-only">{{ fbStars3 }}</span></label>
+          <input id="star2" name="rating" type="radio" value="2" /><label for="star2"><span class="sr-only">{{ fbStars2 }}</span></label>
+          <input id="star1" name="rating" type="radio" value="1" /><label for="star1"><span class="sr-only">{{ fbStars1 }}</span></label>
+        </div>
+      </fieldset>
+      <label for="review-name">{{ fbNameLabel }}</label>
+      <input id="review-name" name="name" type="text" maxlength="40" autocomplete="nickname" />
+      <label for="review-text">{{ fbTextLabel }}</label>
+      <textarea id="review-text" name="message" rows="4" maxlength="2000" required></textarea>
+      <div class="trap" aria-hidden="true">
+        <label for="review_leave_empty">Leave this empty</label>
+        <input id="review_leave_empty" name="leave_empty" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+      <button class="button" type="submit">{{ fbSend }}</button>
+      <p id="review-said" class="said" role="status"></p>
+    </form>
+  </div>
+  <form class="complaint" id="complaint-form" data-lang="{{ lang }}" data-ok="{{ fbcOk }}" data-bad="{{ fbcBad }}">
+    <h2>{{ fbcHeading }}</h2>
+    <p class="note">{{ fbcText }}</p>
+    <label for="complaint-text">{{ fbcLabel }}</label>
+    <textarea id="complaint-text" name="message" rows="3" maxlength="2000" required></textarea>
+    <label for="complaint-email">{{ fbcEmailLabel }}</label>
+    <input id="complaint-email" name="email" type="email" autocomplete="email" placeholder="name@example.com" />
+    <div class="trap" aria-hidden="true">
+      <label for="complaint_leave_empty">Leave this empty</label>
+      <input id="complaint_leave_empty" name="leave_empty" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+    <button class="button ghost" type="submit">{{ fbcSend }}</button>
+    <p id="complaint-said" class="said" role="status"></p>
+  </form>
+</section>
+<script src="/reviews.js" defer></script>

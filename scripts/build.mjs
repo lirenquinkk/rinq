@@ -1,23 +1,37 @@
-// Builds rinq's website into dist/: every page in English (at the root) and Russian (under ru/).
-// A page is either one template for both languages, filled from src/strings.json, or a hand-written
-// file per language (name.en.html, name.ru.html) for the long documents. Every page goes into
-// src/layout.html. {{ key }} is replaced with the string, HTML-escaped; keys ending in "Html" go in as
-// they are. A key missing in either language, or a {{ }} left over, stops the build.
+// Builds rinq's website into dist/: every page in English (at the root), Russian (under ru/) and
+// Ukrainian (under uk/). A page is either one template for all three, filled from src/strings.json
+// (index.html, studio.html, …), or a hand-written file per language for the long documents
+// (terms.en.html, terms.ru.html, terms.uk.html), whose first line names its title. Every page goes into
+// src/layout.html.
+//
+// {{ key }} is replaced with the string, HTML-escaped; keys ending in "Html" go in as they are.
+// {{ json:st }} becomes every string whose key starts with "st", as a JSON object, for the scripts that
+// draw text themselves; "<" is escaped so it can sit inside a <script> element. A string missing in any
+// language, or a {{ }} left over, stops the build.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-export const LANGS = ['en', 'ru'];
+export const LANGS = ['en', 'ru', 'uk'];
+const LABELS = { en: 'EN', ru: 'RU', uk: 'UK' };
+const NAMES = { en: 'English', ru: 'Русский', uk: 'Українська' };
 const PLACEHOLDER = /\{\{\s*([A-Za-z][A-Za-z0-9_]*)\s*\}\}/g;
+const JSON_PLACEHOLDER = /\{\{\s*json:([A-Za-z0-9_]+)\s*\}\}/g;
 
 const escape = (text) => String(text).replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]);
 
 export function fill(template, values, where) {
-  const out = template.replace(PLACEHOLDER, (_, key) => {
-    if (!(key in values)) throw new Error(`${where}: no string "${key}"`);
-    return key.endsWith('Html') ? values[key] : escape(values[key]);
-  });
+  const out = template
+    .replace(JSON_PLACEHOLDER, (_, prefix) => {
+      const picked = Object.fromEntries(Object.entries(values).filter(([key]) => key.startsWith(prefix)));
+      if (!Object.keys(picked).length) throw new Error(`${where}: no strings start with "${prefix}"`);
+      return JSON.stringify(picked).replaceAll('<', '\\u003c');
+    })
+    .replace(PLACEHOLDER, (_, key) => {
+      if (!(key in values)) throw new Error(`${where}: no string "${key}"`);
+      return key.endsWith('Html') ? values[key] : escape(values[key]);
+    });
   const left = out.match(/\{\{[^}]*\}\}/);
   if (left) throw new Error(`${where}: "${left[0]}" was not filled`);
   return out;
@@ -33,7 +47,7 @@ export function readStrings(dir = ROOT) {
   return strings;
 }
 
-/** The pages: [{ name, en, ru }] with each language's body template. */
+/** The pages: [{ name, en, ru, uk }] with each language's body template. */
 export function readPages(dir = ROOT) {
   const files = fs.readdirSync(path.join(dir, 'src/pages'));
   const names = [...new Set(files.map((file) => file.split('.')[0]))].sort();
@@ -49,6 +63,7 @@ export function readPages(dir = ROOT) {
   });
 }
 
+const baseOf = (lang) => (lang === 'en' ? '' : `/${lang}`);
 const fileOf = (name, lang) => `${lang === 'en' ? '' : `${lang}/`}${name}.html`;
 
 export function build({ dir = ROOT, out = path.join(ROOT, 'dist') } = {}) {
@@ -58,19 +73,19 @@ export function build({ dir = ROOT, out = path.join(ROOT, 'dist') } = {}) {
   const written = [];
   for (const page of readPages(dir)) {
     for (const lang of LANGS) {
-      const other = LANGS.find((l) => l !== lang);
-      const root = lang === 'en' ? '' : '../';
-      const values = { ...strings[lang], lang, root, page: page.name };
+      const values = { ...strings[lang], lang, base: baseOf(lang), page: page.name };
       // A hand-written document names its own title in its first line.
       const title = /^<!--\s*title:\s*(.*?)\s*-->/.exec(page[lang]);
-      values.title = title ? `${title[1]} · rinq` : strings[lang][`title_${page.name}`];
-      values.description = strings[lang][`desc_${page.name}`] ?? strings[lang].desc_index;
-      if (!values.title) throw new Error(`page "${page.name}" has no title in ${lang}`);
+      values.pageTitle = title ? `${title[1]} · rinq` : strings[lang][`title_${page.name}`];
+      values.metaDescription = strings[lang][`desc_${page.name}`] ?? strings[lang].metaDescription;
+      if (!values.pageTitle) throw new Error(`page "${page.name}" has no title in ${lang}`);
+      // The same page in the other languages, for search engines and for the switch in the header.
+      values.alternatesHtml = LANGS.filter((other) => other !== lang)
+        .map((other) => `<link rel="alternate" hreflang="${other}" href="${baseOf(other)}/${page.name}.html">`).join('\n');
+      values.langLinksHtml = LANGS.map((other) => `<a href="${baseOf(other)}/${page.name}.html" hreflang="${other}" lang="${other}" title="${NAMES[other]}"${other === lang ? ' aria-current="true"' : ''}>${LABELS[other]}</a>`).join('');
       values.contentHtml = fill(page[lang].replace(/^<!--.*?-->\n?/, ''), values, `${page.name} (${lang})`);
-      values.otherHref = `${root}${fileOf(page.name, other)}`;
-      values.otherLang = strings[other].langName;
-      values.otherCode = other;
-      values.selfHref = fileOf(page.name, lang);
+      // A document's body sits in the reading column; the designed pages lay themselves out.
+      values.mainClass = title ? 'prose' : `page-${page.name}`;
       const html = fill(layout, values, `layout for ${page.name} (${lang})`);
       const target = path.join(out, fileOf(page.name, lang));
       fs.mkdirSync(path.dirname(target), { recursive: true });

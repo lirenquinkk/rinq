@@ -8,7 +8,7 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://psesapmlbjukmdnxkcrv.supabase.co; form-action 'none'; base-uri 'none'; frame-ancestors 'none'" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://yt3.ggpht.com https://i.ytimg.com; connect-src https://psesapmlbjukmdnxkcrv.supabase.co; form-action 'none'; base-uri 'none'; frame-ancestors 'none'" },
         { "key": "Referrer-Policy", "value": "no-referrer" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
