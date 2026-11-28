@@ -80,13 +80,30 @@ test('no page carries an inline style or an inline script, and every page states
     for (const [tag] of html.matchAll(/<script\b[^>]*>/g)) {
       assert.ok(/\bsrc="/.test(tag) || /type="application\/json"/.test(tag), `${file}: ${tag} runs inline`);
     }
-    assert.match(html, /http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';/, file);
+    assert.match(html, /http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; object-src 'none'; style-src 'self';/, file);
   }
   const vercel = JSON.parse(fs.readFileSync(path.join(ROOT, 'vercel.json'), 'utf8'));
   const policy = vercel.headers[0].headers.find((h) => h.key === 'Content-Security-Policy').value;
   assert.match(policy, /style-src 'self';/);
+  assert.match(policy, /object-src 'none';/);
   assert.match(policy, /img-src 'self' https:\/\/yt3\.ggpht\.com https:\/\/i\.ytimg\.com;/);
   assert.match(policy, /connect-src https:\/\/psesapmlbjukmdnxkcrv\.supabase\.co;/);
+  assert.match(policy, /frame-ancestors 'none'/);
+  for (const file of written) assert.match(read(file), /object-src 'none';/, file);
+});
+
+// The rest of the headers Vercel sends with every page: HTTPS only for two years, never in a frame, and
+// a window of its own (no page that opens it can reach it).
+test('every page goes out with the hardening headers', () => {
+  const vercel = JSON.parse(fs.readFileSync(path.join(ROOT, 'vercel.json'), 'utf8'));
+  const headers = Object.fromEntries(vercel.headers[0].headers.map((h) => [h.key, h.value]));
+  assert.equal(vercel.headers[0].source, '/(.*)');
+  assert.match(headers['Strict-Transport-Security'], /^max-age=\d{8,}/);
+  assert.equal(headers['X-Frame-Options'], 'DENY');
+  assert.equal(headers['Cross-Origin-Opener-Policy'], 'same-origin');
+  assert.equal(headers['Referrer-Policy'], 'no-referrer');
+  assert.equal(headers['X-Content-Type-Options'], 'nosniff');
+  assert.match(headers['Permissions-Policy'], /camera=\(\)/);
 });
 
 test('the Studio and the home window get their strings as JSON that parses', () => {
